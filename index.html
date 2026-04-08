@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Nova Experience 2026 — Milan</title>
+  <meta name="description" content="The Nova Experience: 3 days, ~25 selected members, Milan Countryside. Nova's most exclusive annual gathering. Nominate & win a free ticket.">
+  <meta property="og:title" content="The Nova Experience 2026 — Milan">
+  <meta property="og:description" content="3 days. ~25 selected members. Milan Countryside. Nova's most exclusive gathering is back.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --nova-accent: #0EB0A4;
+      --nova-accent-glow: rgba(14,176,164,0.25);
+      --nova-bg-primary: #090E12;
+      --nova-bg-secondary: #131C24;
+      --nova-text-primary: #F0F2F5;
+      --nova-text-secondary: #9BA3AE;
+      --nova-border: rgba(255,255,255,0.08);
+      --nova-card-bg: #111920;
+      --radius: 12px;
+      --gold: #F5C842;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--nova-bg-primary);
+      color: var(--nova-text-primary);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -30%;
+      left: -20%;
+      width: 1100px;
+      height: 1100px;
+      background: radial-gradient(circle, rgba(14,176,164,0.18) 0%, rgba(14,176,164,0.08) 30%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -20%;
+      right: -15%;
+      width: 900px;
+      height: 900px;
+      background: radial-gradient(circle, rgba(14,176,164,0.10) 0%, rgba(14,176,164,0.04) 35%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── Logo ── */
+    .logo-wrap {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .logo-wrap img { height: 36px; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(14,176,164,0.12);
+      border: 1px solid rgba(14,176,164,0.25);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--nova-accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--nova-text-primary) 0%, var(--nova-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .tagline {
+      font-size: 1.15rem;
+      color: var(--nova-text-secondary);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .hero-details {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .hero-detail {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--nova-text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .hero-detail svg {
+      width: 20px;
+      height: 20px;
+      color: var(--nova-accent);
+      flex-shrink: 0;
+    }
+
+    .hero-detail strong {
+      color: var(--nova-text-primary);
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--nova-accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--nova-accent-glow);
+    }
+
+    .btn-primary svg { width: 18px; height: 18px; }
+
+    /* ── Section titles ── */
+    .section-label {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(14,176,164,0.10);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--nova-accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      color: var(--nova-text-secondary);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    /* ── What is TNE ── */
+    .what-section {
+      margin-bottom: 80px;
+    }
+
+    /* Pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .pillar {
+      background: var(--nova-card-bg);
+      border: 1px solid var(--nova-border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .pillar:hover {
+      border-color: rgba(14,176,164,0.3);
+      transform: translateY(-3px);
+    }
+
+    .pillar-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(14,176,164,0.10);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .pillar-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--nova-accent);
+    }
+
+    .pillar h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .pillar p {
+      font-size: 0.85rem;
+      color: var(--nova-text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Stats row */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 24px 12px;
+      background: var(--nova-card-bg);
+      border: 1px solid var(--nova-border);
+      border-radius: var(--radius);
+    }
+
+    .stat-number {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--nova-accent);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--nova-text-secondary);
+      line-height: 1.4;
+    }
+
+    /* Editions timeline */
+    .editions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .edition {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .edition-dot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 0 16px;
+    }
+
+    .edition-dot .year {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--nova-text-primary);
+    }
+
+    .edition-dot .city {
+      font-size: 0.8rem;
+      color: var(--nova-text-secondary);
+    }
+
+    .edition-dot.current .year {
+      color: var(--nova-accent);
+      font-size: 1rem;
+    }
+
+    .edition-dot.current .city {
+      color: var(--nova-accent);
+      font-weight: 600;
+    }
+
+    .edition-line {
+      width: 40px;
+      height: 2px;
+      background: var(--nova-border);
+      flex-shrink: 0;
+    }
+
+    /* ── Contest Section ── */
+    .contest-section {
+      margin-bottom: 60px;
+    }
+
+    .contest-highlight {
+      background: linear-gradient(135deg, rgba(14,176,164,0.08) 0%, rgba(245,200,66,0.06) 100%);
+      border: 1px solid rgba(14,176,164,0.2);
+      border-radius: 16px;
+      padding: 40px 36px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .contest-highlight h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .contest-highlight h2 .accent { color: var(--nova-accent); }
+    .contest-highlight h2 .gold { color: var(--gold); }
+
+    .contest-highlight p {
+      color: var(--nova-text-secondary);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Steps */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .step {
+      background: var(--nova-card-bg);
+      border: 1px solid var(--nova-border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      position: relative;
+    }
+
+    .step-number {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: rgba(14,176,164,0.2);
+      position: absolute;
+      top: 16px;
+      right: 20px;
+    }
+
+    .step h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      padding-right: 30px;
+    }
+
+    .step p {
+      font-size: 0.85rem;
+      color: var(--nova-text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Timeline draws */
+    .draws-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .draws {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .draw {
+      background: var(--nova-card-bg);
+      border: 1px solid var(--nova-border);
+      border-radius: var(--radius);
+      padding: 20px 12px;
+      text-align: center;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .draw:hover {
+      border-color: rgba(14,176,164,0.3);
+      transform: translateY(-2px);
+    }
+
+    .draw.active {
+      border-color: var(--nova-accent);
+      background: rgba(14,176,164,0.05);
+    }
+
+    .draw-month {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .draw-nominations {
+      font-size: 0.75rem;
+      color: var(--nova-text-secondary);
+      margin-bottom: 10px;
+    }
+
+    .draw-icon {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .draw-result {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .draw-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: var(--nova-accent);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
+
+    .draws-note {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--nova-text-secondary);
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+
+    /* Rules */
+    .rules {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .rule {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 16px 20px;
+      background: var(--nova-card-bg);
+      border: 1px solid var(--nova-border);
+      border-radius: var(--radius);
+    }
+
+    .rule svg {
+      width: 20px;
+      height: 20px;
+      color: var(--nova-accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .rule p {
+      font-size: 0.88rem;
+      color: var(--nova-text-secondary);
+      line-height: 1.5;
+    }
+
+    .rule p strong {
+      color: var(--nova-text-primary);
+    }
+
+    /* CTA block */
+    .cta-block {
+      text-align: center;
+      padding: 48px 24px;
+      background: linear-gradient(135deg, rgba(14,176,164,0.10) 0%, rgba(14,176,164,0.03) 100%);
+      border: 1px solid rgba(14,176,164,0.2);
+      border-radius: 16px;
+      margin-bottom: 60px;
+    }
+
+    .cta-block h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta-block p {
+      color: var(--nova-text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .cta-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cta-help {
+      font-size: 0.82rem;
+      color: var(--nova-text-secondary);
+    }
+
+    .cta-help a {
+      color: var(--nova-accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cta-help a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--nova-border);
+    }
+
+    .footer p {
+      font-size: 0.78rem;
+      color: var(--nova-text-secondary);
+    }
+
+    .footer a {
+      color: var(--nova-accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover { text-decoration: underline; }
+
+    /* ── Divider ── */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--nova-accent);
+      border-radius: 3px;
+      margin: 0 auto 60px;
+      opacity: 0.5;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero-details { gap: 16px; }
+      .pillars { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: 1fr; }
+      .draws { grid-template-columns: repeat(3, 1fr); }
+      .rules { grid-template-columns: 1fr; }
+      .editions { gap: 0; }
+      .edition-line { width: 24px; }
+      .contest-highlight { padding: 28px 20px; }
+      .contest-highlight h2 { font-size: 1.4rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .draws { grid-template-columns: repeat(2, 1fr); }
+      .hero-details { flex-direction: column; align-items: center; gap: 10px; }
+      .section-title { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- Logo -->
+  <div class="logo-wrap">
+    <img src="https://cdn.novatalent.com/nova/logos/nova-logo-white.png" alt="Nova" onerror="this.style.display='none'">
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- HERO -->
+  <!-- ════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-badge">4th Edition</div>
+    <h1>The Nova Experience</h1>
+    <p class="tagline">3 days. ~25 selected members. One unforgettable experience.<br>Nova's most exclusive annual gathering is back.</p>
+
+    <div class="hero-details">
+      <div class="hero-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span><strong>Milan Countryside</strong>, Italy</span>
+      </div>
+      <div class="hero-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span><strong>October 2–4</strong>, 2026</span>
+      </div>
+      <div class="hero-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span><strong>~25</strong> spots</span>
+      </div>
+    </div>
+
+    <a href="#contest" class="btn-primary">
+      Nominate & Win a Free Ticket
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </section>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- SECTION 1: WHAT IS TNE -->
+  <!-- ════════════════════════════════════ -->
+  <section class="what-section">
+    <span class="section-label">What is it</span>
+    <h2 class="section-title">More than an event. An inflection point.</h2>
+    <p class="section-subtitle">The Nova Experience is Nova's flagship annual gathering — a 3-day immersive experience where City Leaders, Vertical Leaders, and selected members come together in a European destination to connect at a deeper level, challenge each other's thinking, and walk away transformed.</p>
+
+    <!-- 3 Pillars -->
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        </div>
+        <h3>Day 1 — Starting from yourself</h3>
+        <p>Personal introspection and self-awareness. Strangers become allies in hours through vulnerability and genuine openness. The kind of connections LinkedIn can't manufacture.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Day 2 — Focus on society</h3>
+        <p>Panels, debates, and workshops around a world-pressing topic. Past editions tackled AI and the future of work with C-level speakers and industry leaders.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Day 3 — Elevating each other</h3>
+        <p>Members uplift each other's projects, startups, and ideas. You leave with actionable insights, new collaborators, and the momentum to pursue your next big goal.</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Alumni since 2021</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">1,000+</div>
+        <div class="stat-label">Applications received</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Nationalities per edition</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">~25</div>
+        <div class="stat-label">Selected each year</div>
+      </div>
+    </div>
+
+    <!-- Past editions -->
+    <div class="editions">
+      <div class="edition">
+        <div class="edition-dot">
+          <span class="year">2021</span>
+          <span class="city">Stockholm</span>
+        </div>
+      </div>
+      <div class="edition-line"></div>
+      <div class="edition">
+        <div class="edition-dot">
+          <span class="year">2022</span>
+          <span class="city">Mallorca</span>
+        </div>
+      </div>
+      <div class="edition-line"></div>
+      <div class="edition">
+        <div class="edition-dot">
+          <span class="year">2024</span>
+          <span class="city">Ibiza</span>
+        </div>
+      </div>
+      <div class="edition-line"></div>
+      <div class="edition">
+        <div class="edition-dot current">
+          <span class="year">2026</span>
+          <span class="city">Milan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- SECTION 2: NOMINATE & WIN -->
+  <!-- ════════════════════════════════════ -->
+  <section class="contest-section" id="contest">
+    <span class="section-label">Nominate & Win</span>
+
+    <div class="contest-highlight">
+      <h2>Your nominations could earn you<br>a <span class="gold">free ticket</span> to <span class="accent">The Nova Experience</span></h2>
+      <p>Every person you nominate to join Nova gives you one more chance to win a free spot at TNE 2026. We're giving away <strong style="color:var(--nova-text-primary)">5 free tickets</strong> — one per month — between April and August.</p>
+    </div>
+
+    <!-- How it works -->
+    <h2 class="section-title" style="text-align:center; margin-bottom:8px;">How it works</h2>
+    <p class="section-subtitle" style="text-align:center; margin:0 auto 32px;">Three simple steps to enter the draw.</p>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-number">1</span>
+        <h3>Nominate someone</h3>
+        <p>Know someone who deserves to be part of Nova? Nominate them through the app. Each nomination counts as one ticket.</p>
+      </div>
+      <div class="step">
+        <span class="step-number">2</span>
+        <h3>Tickets accumulate</h3>
+        <p>Your tickets carry over every month. The more people you nominate, the higher your chances in every upcoming draw.</p>
+      </div>
+      <div class="step">
+        <span class="step-number">3</span>
+        <h3>Win a free spot</h3>
+        <p>Each month, we draw one winner from the ticket pool. If you win, your spot at TNE 2026 is fully covered.</p>
+      </div>
+    </div>
+
+    <!-- Monthly draws -->
+    <h3 class="draws-title">5 monthly draws, 5 free tickets</h3>
+
+    <div class="draws">
+      <div class="draw active">
+        <div class="draw-badge">Now</div>
+        <div class="draw-month">April</div>
+        <div class="draw-nominations">Nominate now</div>
+        <div class="draw-icon">&#127915;</div>
+        <div class="draw-result">Draw: early May</div>
+      </div>
+      <div class="draw">
+        <div class="draw-month">May</div>
+        <div class="draw-nominations">+ new nominations</div>
+        <div class="draw-icon">&#127915;</div>
+        <div class="draw-result">Draw: early Jun</div>
+      </div>
+      <div class="draw">
+        <div class="draw-month">June</div>
+        <div class="draw-nominations">+ new nominations</div>
+        <div class="draw-icon">&#127915;</div>
+        <div class="draw-result">Draw: early Jul</div>
+      </div>
+      <div class="draw">
+        <div class="draw-month">July</div>
+        <div class="draw-nominations">+ new nominations</div>
+        <div class="draw-icon">&#127915;</div>
+        <div class="draw-result">Draw: early Aug</div>
+      </div>
+      <div class="draw">
+        <div class="draw-month">August</div>
+        <div class="draw-nominations">+ new nominations</div>
+        <div class="draw-icon">&#127915;</div>
+        <div class="draw-result">Draw: early Sep</div>
+      </div>
+    </div>
+
+    <p class="draws-note">Each draw takes place in the first week of the following month to count all nominations from that period.<br>The earlier you start nominating, the more tickets you accumulate across all draws.</p>
+
+    <!-- Rules -->
+    <div class="rules">
+      <div class="rule">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <p><strong>Tickets accumulate.</strong> Every nomination you've ever made stays in the pool. More nominations = better odds every month.</p>
+      </div>
+      <div class="rule">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <p><strong>One win per person.</strong> Once you win a free ticket, you're removed from future draws — so everyone gets a fair shot.</p>
+      </div>
+      <div class="rule">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <p><strong>Start early.</strong> April nominations count in all 5 draws. August nominations only count in 1. The math is clear.</p>
+      </div>
+      <div class="rule">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        <p><strong>Quality matters.</strong> Nominate people who truly deserve to be part of Nova. That's what makes the community extraordinary.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <h2>Ready to nominate?</h2>
+      <p>Every nomination is a chance. Start now and maximize your odds across all 5 draws.</p>
+      <div class="cta-links">
+        <a href="https://app.novatalent.com/nominate" target="_blank" class="btn-primary">
+          Nominate Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <span class="cta-help">Don't know how to nominate? <a href="https://nova-how-to-refer.github.io/" target="_blank">Check this out</a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><a href="https://www.novatalent.com" target="_blank">Nova Talent</a> &middot; The Global Top Talent Network</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
