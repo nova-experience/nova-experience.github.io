@@ -574,6 +574,77 @@
 
     .cta-help a:hover { text-decoration: underline; }
 
+    /* ── FAQ ── */
+    .faq-section {
+      margin-bottom: 60px;
+    }
+
+    .faq-item {
+      background: var(--nova-card-bg);
+      border: 1px solid var(--nova-border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(14,176,164,0.3);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      text-align: left;
+      color: var(--nova-text-primary);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .faq-question svg {
+      width: 18px;
+      height: 18px;
+      color: var(--nova-accent);
+      flex-shrink: 0;
+      margin-left: 16px;
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 0.88rem;
+      color: var(--nova-text-secondary);
+      line-height: 1.6;
+    }
+
+    .faq-answer-inner a {
+      color: var(--nova-accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .faq-answer-inner a:hover {
+      text-decoration: underline;
+    }
+
     /* ── Footer ── */
     .footer {
       text-align: center;
@@ -832,6 +903,44 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <span class="cta-help">Not sure how to nominate? Learn it <a href="https://nova-how-to-refer.github.io/" target="_blank">here</a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- FAQ -->
+  <!-- ════════════════════════════════════ -->
+  <section class="faq-section">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title">Frequently asked questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); var a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        What happens if I pay for my spot and I'm later selected in the draw?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Your ticket will be fully refunded and you'll enjoy a free spot at The Nova Experience.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); var a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        Are my nominations saved for the following months?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Yes. All your nominations from previous months carry over to every future draw. That way, every single nomination counts and gets you closer to enjoying a free spot.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); var a=this.nextElementSibling; a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        How can I nominate someone?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner"><a href="https://nova-how-to-refer.github.io/" target="_blank">Here</a> you'll find everything you need to know about nominating someone to join Nova.</div>
       </div>
     </div>
   </section>
