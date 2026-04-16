@@ -616,7 +616,7 @@
       .pillars { grid-template-columns: 1fr; }
       .stats { grid-template-columns: repeat(2, 1fr); }
       .steps { grid-template-columns: 1fr; }
-      .draws { grid-template-columns: repeat(3, 1fr); }
+      .draws { grid-template-columns: repeat(2, 1fr) !important; }
       .rules { grid-template-columns: 1fr; }
       .editions { gap: 0; }
       .edition-line { width: 24px; }
@@ -744,7 +744,7 @@
 
     <div class="contest-highlight">
       <h2>Your nominations could earn you<br>a <span class="gold">free ticket</span> to <span class="accent">The Nova Experience</span></h2>
-      <p>Every person you nominate to join Nova gives you one more chance to win a free spot at TNE 2026. The experience is valued at <strong style="color:var(--gold)">€750</strong>, and we're giving away <strong style="color:var(--nova-text-primary)">5 free tickets</strong>, one per month, between April and August.</p>
+      <p>Every person you nominate to join Nova gives you one more chance to win a free spot at TNE 2026. The experience is valued at <strong style="color:var(--gold)">over €500</strong>, and we're giving away <strong style="color:var(--nova-text-primary)">4 free tickets</strong>, one per month, between May and August.</p>
     </div>
 
     <!-- How it works -->
@@ -770,19 +770,13 @@
     </div>
 
     <!-- Monthly draws -->
-    <h3 class="draws-title">5 monthly draws, 5 free tickets</h3>
+    <h3 class="draws-title">4 monthly draws, 4 free tickets</h3>
 
-    <div class="draws">
+    <div class="draws" style="grid-template-columns: repeat(4, 1fr);">
       <div class="draw active">
         <div class="draw-badge">Now</div>
-        <div class="draw-month">April</div>
-        <div class="draw-nominations">Nominate now</div>
-        <div class="draw-icon">&#127915;</div>
-        <div class="draw-result">Draw: early May</div>
-      </div>
-      <div class="draw">
         <div class="draw-month">May</div>
-        <div class="draw-nominations">+ new nominations</div>
+        <div class="draw-nominations">Nominate now</div>
         <div class="draw-icon">&#127915;</div>
         <div class="draw-result">Draw: early Jun</div>
       </div>
@@ -820,7 +814,7 @@
       </div>
       <div class="rule">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <p><strong>Start early.</strong> April nominations count in all 5 draws. August nominations only count in 1. The math is clear.</p>
+        <p><strong>Start early.</strong> May nominations count in all 4 draws. August nominations only count in 1. The math is clear.</p>
       </div>
       <div class="rule">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
@@ -831,7 +825,7 @@
     <!-- CTA -->
     <div class="cta-block">
       <h2>Ready to nominate?</h2>
-      <p>Every nomination is a chance. Start now and maximize your odds across all 5 draws.</p>
+      <p>Every nomination is a chance. Start now and maximize your odds across all 4 draws.</p>
       <div class="cta-links">
         <a href="https://app.novatalent.com/nominate" target="_blank" class="btn-primary">
           Nominate Now
